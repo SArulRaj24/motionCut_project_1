@@ -1,0 +1,64 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Bucket List</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="background"></div>
+    <header>
+        <h1>My Bucket List</h1>
+        <button id="toggle-theme">Toggle Theme</button>
+    </header>
+    <main>
+        <div class="add-item">
+            <input type="text" id="new-item" placeholder="Add a new bucket list item...">
+            <button id="add-button">Add</button>
+        </div>
+        <ul class="bucket-list" id="bucket-list">
+            <li><input type="checkbox" class="checkbox"> Explore the Bucket List</li>
+            <li><input type="checkbox" class="checkbox"> Add your list in bucket....</li>
+        </ul>
+    </main>
+    <script>
+        document.getElementById('toggle-theme').addEventListener('click', function() {
+            document.body.classList.toggle('dark-theme');
+            document.body.classList.add('theme-transition');
+            setTimeout(() => {
+                document.body.classList.remove('theme-transition');
+            }, 500);
+        });
+
+        document.querySelectorAll('.checkbox').forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                if (this.checked) {
+                    this.parentElement.classList.add('completed');
+                } else {
+                    this.parentElement.classList.remove('completed');
+                }
+            });
+        });
+
+        document.getElementById('add-button').addEventListener('click', function() {
+            const newItemText = document.getElementById('new-item').value;
+            if (newItemText.trim() !== "") {
+                const newItem = document.createElement('li');
+                newItem.innerHTML = `<input type="checkbox" class="checkbox"> ${newItemText}`;
+                document.getElementById('bucket-list').appendChild(newItem);
+                document.getElementById('new-item').value = "";
+                newItem.querySelector('.checkbox').addEventListener('change', function() {
+                    if (this.checked) {
+                        this.parentElement.classList.add('completed');
+                    } else {
+                        this.parentElement.classList.remove('completed');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
