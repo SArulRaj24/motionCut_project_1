@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Shop</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="product-container">
+            <div class="product-image">
+                <img src="product.jpg" alt="Product Image" id="mainImage">
+            </div>
+            <div class="product-details">
+                <h1>Product Name</h1>
+                <p class="description">This is a great product that serves its purpose well. It is made from high-quality materials and offers excellent value.</p>
+                <p class="price">$49.99</p>
+                <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+            </div>
+        </div>
+        <section class="reviews">
+            <h2>Customer Reviews</h2>
+            <p>No reviews yet. Be the first to write a review!</p>
+        </section>
+        <section class="related-products">
+            <h2>Related Products</h2>
+            <div class="product-list">
+                <div class="product-item">
+                    <img src="related1.jpg" alt="Related Product 1">
+                    <p>Related Product 1</p>
+                </div>
+                <div class="product-item">
+                    <img src="related2.jpg" alt="Related Product 2">
+                    <p>Related Product 2</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Your E-Commerce Site</p>
+    </footer>
+    <script>
+        function addToCart() {
+            alert("Product added to cart!");
+        }
+    </script>
+    <style>
+        body {
+            background-color: lavender;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        header {
+            background: #333;
+            padding: 10px;
+            text-align: center;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        .product-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .product-image img {
+            max-width: 300px;
+            border-radius: 10px;
+        }
+        .product-details {
+            margin-left: 20px;
+        }
+        .add-to-cart {
+            background: #28a745;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .add-to-cart:hover {
+            background: #218838;
+        }
+        .related-products {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .product-list {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .product-item img {
+            max-width: 100px;
+            border-radius: 5px;
+        }
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</body>
+</html>
+<section class="newsletter">
+    <h2>Subscribe to our Newsletter</h2>
+    <form id="newsletterForm">
+        <input type="email" placeholder="Enter your email" required>
+        <button type="submit">Subscribe</button>
+    </form>
+</section>
+<script>
+    document.getElementById('newsletterForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        alert('Thank you for subscribing!');
+    });
+</script>
+<style>
+    .newsletter {
+        text-align: center;
+        margin: 20px 0;
+    }
+    .newsletter input[type="email"] {
+        padding: 10px;
+        width: 250px;
+        margin-right: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    .newsletter button {
+        padding: 10px 20px;
+        background: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    .newsletter button:hover {
+        background: #0056b3;
+    }
+</style>
